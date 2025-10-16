@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const menuPath = path.join(__dirname, '..', 'shake-sea', 'components', 'sections', 'menu.jsx')
+const menuPath = path.join(__dirname, '..', 'components', 'sections', 'menu.jsx')
 const publicImgDirs = [
   path.join(__dirname, '..', 'public', 'img'),
   path.join(__dirname, '..', 'public', 'images')

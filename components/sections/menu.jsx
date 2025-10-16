@@ -505,7 +505,7 @@ const menuData = {
       name: "Chocolate Brownie",
       price: "₹99",
       description: "A rich, fudgy, and intensely chocolatey brownie with a dense, moist texture. A perfect indulgence for any chocolate lover.",
-  image: "/img/Chocolate Browin.jpg",
+  image: "/img/ChocolateBrownie.jpg",
       ingredients: ["Flour", "Sugar", "Butter", "Cocoa Powder", "Chocolate", "Eggs"],
       details: "A rich, fudgy, and intensely chocolatey brownie with a dense, moist texture. A perfect indulgence for any chocolate lover."
     },
@@ -514,7 +514,7 @@ const menuData = {
       name: "Red Velvet",
       price: "₹99",
       description: "A slice of classic Red Velvet cake. A striking crimson-colored cake with a hint of cocoa, known for its soft, velvety texture and typically paired with cream cheese frosting.",
-  image: "/img/Red Velvet.jpg",
+  image: "/img/Red Velvet Waffle.jpg",
       ingredients: ["Flour", "Sugar", "Butter", "Cocoa Powder", "Buttermilk", "Red Food Coloring"],
       details: "A slice of classic Red Velvet cake. A striking crimson-colored cake with a hint of cocoa, known for its soft, velvety texture and typically paired with cream cheese frosting."
     },
@@ -845,6 +845,8 @@ export default function Menu() {
 }
 
 function MenuItem({ item, onSelect }) {
+  const [imageError, setImageError] = useState(false)
+
   return (
     <div
       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
@@ -853,11 +855,21 @@ function MenuItem({ item, onSelect }) {
       {/* Square image area */}
       <div className="relative bg-gray-200 overflow-hidden">
         <div className="w-full" style={{ paddingTop: '100%', position: 'relative' }}>
-          <img
-            src={item.image}
-            alt={item.name}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-          />
+          {!imageError ? (
+            <img
+              src={item.image}
+              alt={item.name}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center">
+              <div className="text-center text-gray-500">
+                <div className="text-4xl mb-2">🍽️</div>
+                <div className="text-sm">Image not available</div>
+              </div>
+            </div>
+          )}
 
           {/* overlay name/price */}
           <div className="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3">

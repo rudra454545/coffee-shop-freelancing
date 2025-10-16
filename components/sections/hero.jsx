@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="w-full h-full rounded-2xl flex items-center justify-center relative overflow-hidden">
           {/* Video background for the hero card */}
           <video
-            src="/video/lv_0_20251015204745.mp4"
+            src="https://drive.google.com/uc?export=download&id=1m8WQ1V25YbBxE-ZiRbi4qn72a9oVfFV4"
             autoPlay
             muted
             loop

@@ -155,7 +155,7 @@ const menuData = {
   name: "French Fries",
   price: "₹59",
   description: "Classic, golden, and crispy. Our potatoes are perfectly cut, fried to a beautiful golden-brown, and lightly salted. The perfect side for any meal.",
-  image: "https://drive.google.com/uc?export=view&id=1V_2LYTC2u7E6MG4DEwGmNrwujs7CqQwL",
+  image: "/img/French fries.jpg",
   ingredients: ["Potatoes", "Vegetable Oil", "Salt"],
   details: "Classic, golden, and crispy. Our potatoes are perfectly cut, fried to a beautiful golden-brown, and lightly salted. The perfect side for any meal."
 },

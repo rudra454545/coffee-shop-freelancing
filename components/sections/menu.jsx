@@ -830,6 +830,11 @@ export default function Menu() {
             icon="🏍️"
             href="https://www.zomato.com"
           />
+          <OrderButton
+            platform="ServeNow"
+            icon="📍"
+            href="https://www.servenow.in/shake-sea-mgt4ern6puw/menu"
+          />
         </div>
 
         {/* Modal */}
@@ -956,7 +961,8 @@ function MenuModal({ item, onClose }) {
                 <OrderOption
                   platform="ServeNow"
                   icon="📍"
-                  available={false}
+                  available={true}
+                  onClick={() => window.open('https://www.servenow.in/shake-sea-mgt4ern6puw/menu', '_blank')}
                 />
               </div>
             </div>
